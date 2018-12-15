@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import ManageRecipesContext from '../context/ManageRecipesContext';
 import uuid from 'uuidv4';
+import Modal from '../styles/Modal.css';
 
 const modalRoot = document.getElementById('modal-root');
 
@@ -16,6 +17,7 @@ class ManageRecipeModal extends Component {
 	el = document.createElement('div');
 	
 	componentDidMount() {
+		this.el.classList.add('container__modal');
 		modalRoot.appendChild(this.el);
 		const { activeRecipeID } = this.context;
 		if(activeRecipeID) {
@@ -73,40 +75,44 @@ class ManageRecipeModal extends Component {
 			edit: 'Edit Recipe'
 		}
         return ReactDOM.createPortal(
-			<div>
-				<h2>
-					{modalTitles[modalType]}
-				</h2>
-				<form onSubmit={modalSubmitMethod[modalType]}>
-					<label htmlFor="recipeName">
-						Recipe
-						<input
-							type="text"
-							name="recipeName"
-							placeholder="Recipe Name"
-							value={this.state.recipeName}
-							onChange={this.saveToState}/>
-					</label>
-					<label htmlFor="ingredients">
-						Ingredients
-						<input
-							type="textarea"
-							name="ingredients"
-							placeholder="Enter Ingredients, Separated by Commas"
-							value={this.state.ingredients}
-							onChange={this.saveToState}/>
-					</label>
-					<button
-						className="btn primary"
-						onClick={modalSubmitMethod[modalType]}>
-						{submitButtonName[modalType]}
-					</button>
-					<button
-						className="btn default"
-						Click={this.closeModal}>
-						Close
-					</button>
-				</form>
+			<div className="modal__background">
+				<div className="modal">
+					<h2 className="modal__header">
+						{modalTitles[modalType]}
+					</h2>
+					<form onSubmit={modalSubmitMethod[modalType]} className="modalForm">
+						<label htmlFor="recipeName">
+							Recipe
+							<input
+								type="text"
+								name="recipeName"
+								placeholder="Recipe Name"
+								value={this.state.recipeName}
+								onChange={this.saveToState}/>
+						</label>
+						<label htmlFor="ingredients">
+							Ingredients
+							<input
+								type="textarea"
+								name="ingredients"
+								placeholder="Enter Ingredients, Separated by Commas"
+								value={this.state.ingredients}
+								onChange={this.saveToState}/>
+						</label>
+						<div>
+							<button
+								className="btn primary"
+								onClick={modalSubmitMethod[modalType]}>
+								{submitButtonName[modalType]}
+							</button>
+							<button
+								className="btn default"
+								onClick={this.closeModal}>
+								Close
+							</button>
+						</div>
+					</form>
+				</div>
 			</div>,
 			this.el
         );

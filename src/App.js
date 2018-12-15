@@ -17,7 +17,7 @@ class App extends Component {
       ? <ManageRecipeModal />
       : null;
     return (
-      <div>
+      <>
         <RecipesList />
         <button
           className="btn primary"
@@ -25,7 +25,7 @@ class App extends Component {
             Add Recipe
         </button>
         {modal}
-      </div>
+      </>
     );
   }
 }

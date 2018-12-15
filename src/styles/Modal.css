@@ -1,0 +1,50 @@
+.container__modal {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.modal__background {
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.4);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal {
+	background: #ffffff;
+	width: 80%;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: #000000 0px 0px 15px; 
+}
+
+.modal__header {
+	margin: 0 0 15px;
+}
+
+.modalForm {
+	
+}
+
+.modalForm label,  .modalForm input {
+	display: block;
+}
+
+.modalForm label {
+	margin-bottom: 10px;
+	font-weight: 500;
+}
+
+.modalForm input {
+	width: 100%;
+	padding: 5px;
+	border-radius: 5px;
+	outline: none;
+	border: 1px solid #a1a1a1;
+	margin-top: 3px;
+}
