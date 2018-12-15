@@ -18,7 +18,6 @@
 .modal {
 	background: #ffffff;
 	width: 80%;
-	padding: 20px;
 	border-radius: 5px;
 	box-shadow: #000000 0px 0px 15px; 
 }
@@ -47,4 +46,17 @@
 	outline: none;
 	border: 1px solid #a1a1a1;
 	margin-top: 3px;
+}
+
+.modal__section {
+	border-bottom: 1px solid #a1a1a1;
+	padding: 5px 20px;
+}
+
+.modal__section:last-child {
+	border-bottom: none;
+}
+
+.modal__section--alignRight {
+	text-align: right;
 }

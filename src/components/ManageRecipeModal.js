@@ -77,29 +77,33 @@ class ManageRecipeModal extends Component {
         return ReactDOM.createPortal(
 			<div className="modal__background">
 				<div className="modal">
-					<h2 className="modal__header">
-						{modalTitles[modalType]}
-					</h2>
 					<form onSubmit={modalSubmitMethod[modalType]} className="modalForm">
-						<label htmlFor="recipeName">
-							Recipe
-							<input
-								type="text"
-								name="recipeName"
-								placeholder="Recipe Name"
-								value={this.state.recipeName}
-								onChange={this.saveToState}/>
-						</label>
-						<label htmlFor="ingredients">
-							Ingredients
-							<input
-								type="textarea"
-								name="ingredients"
-								placeholder="Enter Ingredients, Separated by Commas"
-								value={this.state.ingredients}
-								onChange={this.saveToState}/>
-						</label>
-						<div>
+						<div className="modal__section">
+							<h2 className="modal__header">
+								{modalTitles[modalType]}
+							</h2>
+						</div>
+						<div className="modal__section">
+							<label htmlFor="recipeName">
+								Recipe
+								<input
+									type="text"
+									name="recipeName"
+									placeholder="Recipe Name"
+									value={this.state.recipeName}
+									onChange={this.saveToState}/>
+							</label>
+							<label htmlFor="ingredients">
+								Ingredients
+								<input
+									type="textarea"
+									name="ingredients"
+									placeholder="Enter Ingredients, Separated by Commas"
+									value={this.state.ingredients}
+									onChange={this.saveToState}/>
+							</label>
+						</div>
+						<div className="modal__section modal__section--alignRight">
 							<button
 								className="btn primary"
 								onClick={modalSubmitMethod[modalType]}>
