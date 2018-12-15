@@ -2,9 +2,16 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class RecipeHeader extends Component {
+    openDetailsHandler = () => {
+        this.props.toggleDetails();
+    }
     render() {
         return (
-            <p>{this.props.recipeName}</p>
+            <p
+                onClick={this.openDetailsHandler}
+                className="recipe__header">
+                {this.props.recipeName}
+            </p>
         );
     }
 }

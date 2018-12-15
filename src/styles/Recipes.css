@@ -1,0 +1,43 @@
+.recipes {
+	background: #f1f1f1;
+	margin: 0 auto;
+	border-radius: 3px;
+	list-style: none;
+	padding: 20px;
+}
+
+.recipe__header {
+	background: #bef1be;
+	margin: 0 0 3px;
+	padding: 5px;
+	border-radius: 5px;
+	color: #518251;
+	cursor: pointer;
+}
+
+.recipe__details {
+	background: #ffffff;
+	padding: 10px;
+}
+
+.recipe__ingredients {
+	list-style: none;
+	padding: 0;
+}
+
+.recipe__ingredient {
+	border-bottom: 1px solid #f1f1f1;
+	border-right: 1px solid #f1f1f1;
+	border-left: 1px solid #f1f1f1;
+	padding: 8px;
+}
+
+.recipe__ingredient:first-child {
+	border-top: 1px solid #f1f1f1;
+}
+
+.recipe__ingredientsTitle {
+	width: 100%;
+	text-align: center;
+	margin: 0 0 10px;
+}

@@ -5,13 +5,16 @@ class RecipeIngredients extends Component {
     render() {
         const splittedIngredients = this.props.ingredients.split(',');
         return (
-            <ul>
-                {splittedIngredients.map(ingredient => (
-                    <li key={ingredient}>
-                        {ingredient}
-                    </li>
-                ))}
-            </ul>
+            <>
+                <p className="recipe__ingredientsTitle">Ingredients</p>
+                <ul className="recipe__ingredients">
+                    {splittedIngredients.map(ingredient => (
+                        <li className="recipe__ingredient" key={ingredient}>
+                            {ingredient}
+                        </li>
+                    ))}
+                </ul>
+            </>
         );
     }
 }

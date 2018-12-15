@@ -4,6 +4,7 @@ import extendedProvider from "./context/extendedProvider";
 import ManageRecipesContext from './context/ManageRecipesContext';
 import ManageRecipeModal from './components/ManageRecipeModal';
 import Button from './styles/Button.css';
+import AppStyles from './styles/App.css';
 
 class App extends Component {
   static contextType = ManageRecipesContext;
@@ -17,7 +18,7 @@ class App extends Component {
       ? <ManageRecipeModal />
       : null;
     return (
-      <>
+      <div className="appWrapper">
         <RecipesList />
         <button
           className="btn primary"
@@ -25,7 +26,7 @@ class App extends Component {
             Add Recipe
         </button>
         {modal}
-      </>
+      </div>
     );
   }
 }
