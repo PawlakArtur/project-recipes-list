@@ -1,0 +1,35 @@
+.btn {
+	background: #ffffff;
+	padding: 8px;
+	border-radius: 5px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+.btn.primary {
+	background: #454bff;
+	color: #ffffff;
+}
+
+.btn.primary:hover {
+	background: #2227c8;
+}
+
+.btn.danger {
+	background: #ff0101;
+	color: #ffffff;
+}
+
+.btn.danger:hover {
+	background: #db0505;
+}
+
+.btn.default {
+	border: 1px solid #bababa;
+}
+
+.btn.default:hover {
+	background: #f1f1f1;
+}
+

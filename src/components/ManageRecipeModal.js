@@ -68,6 +68,10 @@ class ManageRecipeModal extends Component {
 			add: this.addRecipe,
 			edit: this.editRecipe
 		}
+		const submitButtonName = {
+			add: 'Add Recipe',
+			edit: 'Edit Recipe'
+		}
         return ReactDOM.createPortal(
 			<div>
 				<h2>
@@ -92,8 +96,16 @@ class ManageRecipeModal extends Component {
 							value={this.state.ingredients}
 							onChange={this.saveToState}/>
 					</label>
-					<button onClick={modalSubmitMethod[modalType]}>{modalType}</button>
-					<button onClick={this.closeModal}>Close</button>
+					<button
+						className="btn primary"
+						onClick={modalSubmitMethod[modalType]}>
+						{submitButtonName[modalType]}
+					</button>
+					<button
+						className="btn default"
+						Click={this.closeModal}>
+						Close
+					</button>
 				</form>
 			</div>,
 			this.el

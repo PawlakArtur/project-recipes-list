@@ -3,6 +3,7 @@ import RecipesList from "./components/RecipesList";
 import extendedProvider from "./context/extendedProvider";
 import ManageRecipesContext from './context/ManageRecipesContext';
 import ManageRecipeModal from './components/ManageRecipeModal';
+import Button from './styles/Button.css';
 
 class App extends Component {
   static contextType = ManageRecipesContext;
@@ -18,7 +19,11 @@ class App extends Component {
     return (
       <div>
         <RecipesList />
-        <button onClick={this.openAddRecipeModal}>Add Recipe</button>
+        <button
+          className="btn primary"
+          onClick={this.openAddRecipeModal}>
+            Add Recipe
+        </button>
         {modal}
       </div>
     );
